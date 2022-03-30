@@ -35,4 +35,4 @@ puts('Enter your morse message: ')
 
 morse_message = gets.chomp
 
-puts("Your message is: " + decode_char(morse_message))
+puts "Your message is: #{decode_char(morse_message)}"
