@@ -1,6 +1,22 @@
-require_relative 'dictionary'
+def morse(key)
+  data = {
+    '.-' => 'A', '-...' => 'B',
+    '-.-.' => 'C', '-..' => 'D',
+    '.' => 'E', '..-.' => 'F',
+    '--.' => 'G', '....' => 'H',
+    '..' => 'I', '.---' => 'J',
+    '-.-' => 'K', '.-..' => 'L',
+    '--' => 'M', '-.' => 'N',
+    '---' => 'O', '.--.' => 'P',
+    '--.-' => 'Q', '.-.' => 'R',
+    '...' => 'S', '-' => 'T',
+    '..-' => 'U', '...-' => 'V',
+    '.--' => 'W', '-..-' => 'X',
+    '-.--' => 'Y', '--..' => 'Z'
+  }
 
-include Dictionary
+  data[key] || ' '
+end
 
 def decode_char(morse)
   message = ''
@@ -8,15 +24,15 @@ def decode_char(morse)
   words.each do |word|
     chars = word.split
     chars.each do |char|
-      message += Dictionary.morse(char) || ' '
+      message += morse(char)
     end
     message += ' '
   end
- message
+  message
 end
 
 puts('Enter your morse message: ')
 
-morse_message = gets.chomp;
+morse_message = gets.chomp
 
-puts(decode_char(morse_message))
+puts("Your message is: " + decode_char(morse_message))
