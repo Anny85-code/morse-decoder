@@ -1,0 +1,41 @@
+const morseDictionary = {
+    ".-": "A",
+    "-...": "B",
+    "-.-.":"C",
+    "-..": "D",
+    ".": "E",
+    "..-.": "F",
+    "--.": "G",
+    "....": "H",
+    "..": "I",
+    ".---": "J",
+    "-.-": "K",
+    ".-..": "L",
+    "--": "M",
+    "-.": "N",
+    "---": "O",
+    ".--.": "P",
+    "--.-": "Q",
+    ".-.": "R",
+    "...": "S",
+    "-": "T",
+    "..-": "U",
+    "...-": "V",
+    ".--": "W",
+    "-..-": "X",
+    "-.--": "Y",
+    "--..": "Z",
+};
+
+const decode_char = (morse) => {
+    let message = '';
+    words = morse.split('   ');
+    words.forEach(word => {
+         chars = word.split(' ');
+         chars.forEach(char => { message += morseDictionary[char] });
+         message += ' ';
+    });
+    return message;
+}
+
+console.log(decode_char(".... . .-.. .-.. --- / - .... . .-. ... / .... --- .--. . / -.-- --- ..- / .-.. .. -.- . / .-. ..- -... -.--"));
