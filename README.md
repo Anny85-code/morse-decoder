@@ -1,6 +1,6 @@
 # Morse Decoder
 
-> This repository morse code dictionary and function to decode morse message from inputed data in terminal
+> Implemented in this repository a morse code dictionary, and a function to decode morse message collected from the terminal
 
 ## Built With
 
