@@ -14,10 +14,10 @@ def vocab(check, type)
     '.--' => 'W', '-..-' => 'X',
     '-.--' => 'Y', '--..' => 'Z'
   }
-  if type === 1
+  if type == 1
     data[check] || ' '
   else
-    (data.key(check) + ' ' || ' ')
+    ("#{data.key(check)} ") || ' '
   end
 end
 
@@ -46,11 +46,7 @@ end
 
 def chars_map(word, type)
   form = ''
-  if type == 1
-    chars = word.split
-  else
-    chars = word.chars
-  end
+  chars = type == 1 ? word.split : word.chars
   chars.each do |char|
     form += vocab(char.upcase, type)
   end
@@ -60,9 +56,10 @@ end
 def morse_type(input)
   puts 'Enter your message'
   morse_message = gets.chomp
-  if input == '0'
+  case input
+  when "0"
     puts "ENCODED: #{encode(morse_message)}"
-  elsif input == '1'
+  when "1"
     puts "DECODED: #{decode(morse_message)}"
   else
     puts 'Invalid selection'
