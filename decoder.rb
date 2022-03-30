@@ -17,7 +17,7 @@ def vocab(check, type)
   if type == 1
     data[check] || ' '
   else
-    ("#{data.key(check)} ") || ' '
+    "#{data.key(check)} " || ' '
   end
 end
 
@@ -57,9 +57,9 @@ def morse_type(input)
   puts 'Enter your message'
   morse_message = gets.chomp
   case input
-  when "0"
+  when '0'
     puts "ENCODED: #{encode(morse_message)}"
-  when "1"
+  when '1'
     puts "DECODED: #{decode(morse_message)}"
   else
     puts 'Invalid selection'
